@@ -3,7 +3,7 @@ name: Build and Deploy Preview
 on:
     push:
         branches-ignore:
-            - main
+            - master
 
 jobs:
     build-deploy-preview:

@@ -1,4 +1,4 @@
-name: CI
+name: Build and Deploy
 
 on:
     push:
@@ -35,7 +35,7 @@ jobs:
                   SERVER_IP: ${{ secrets.SERVER_IP }}
               run: |
                   echo "Deploying to /var/www/portfolio-johngeestudios/"
-                  sshpass -p $SERVER_PASSWORD scp -p 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:/var/www/portfolio-johngeestudios/
+                  sshpass -p $SERVER_PASSWORD scp -P 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:/var/www/portfolio-johngeestudios/
 
     deploy_master:
         if: github.event_name == 'pull_request'

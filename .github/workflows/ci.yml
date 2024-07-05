@@ -33,9 +33,10 @@ jobs:
                   SERVER_USER: ${{ secrets.SERVER_USER }}
                   SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
                   SERVER_IP: ${{ secrets.SERVER_IP }}
+                  SERVER_PREVIEW_PATH: ${{ secrets.SERVER_PREVIEW_PATH }}
               run: |
-                  echo "Deploying to /var/www/portfolio-johngeestudios/"
-                  sshpass -p $SERVER_PASSWORD scp -P 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:/var/www/portfolio-johngeestudios/
+                  echo "Deploying to Preview site"
+                  sshpass -p $SERVER_PASSWORD scp -P 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:$SERVER_PREVIEW_PATH
 
     deploy_master:
         if: github.event_name == 'pull_request'

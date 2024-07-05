@@ -9,7 +9,7 @@ on:
         branches:
             - master
 jobs:
-    build:
+    build-deploy-preview:
         runs-on: ubuntu-latest
 
         steps:
@@ -38,7 +38,7 @@ jobs:
                   echo "Deploying to Preview site"
                   sshpass -p $SERVER_PASSWORD scp -P 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:$SERVER_PREVIEW_PATH
 
-    deploy_master:
+    build-deploy-production:
         if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
 

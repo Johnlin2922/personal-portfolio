@@ -1,13 +1,10 @@
-name: Build and Deploy
+name: Build and Deploy Preview
 
 on:
     push:
-        branches:
-            - "*"
-            - "!master"
-    pull_request:
-        branches:
-            - master
+        branches-ignore:
+            - main
+
 jobs:
     build-deploy-preview:
         runs-on: ubuntu-latest
@@ -37,30 +34,3 @@ jobs:
               run: |
                   echo "Deploying to Preview site"
                   sshpass -p $SERVER_PASSWORD scp -P 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:$SERVER_PREVIEW_PATH
-
-    build-deploy-production:
-        if: github.event_name == 'pull_request'
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
-
-            - name: Set up Node.js
-              uses: actions/setup-node@v2
-              with:
-                  node-version: "14"
-
-            - name: Install dependencies
-              run: npm install
-
-            - name: Build project
-              run: npm run build
-
-            - name: Deploy to server for master branch
-              env:
-                  SERVER_USER: ${{ secrets.SERVER_USER }}
-                  SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-                  SERVER_IP: ${{ secrets.SERVER_IP }}
-              run: |
-                  echo "Deploying to a live production for master branch"

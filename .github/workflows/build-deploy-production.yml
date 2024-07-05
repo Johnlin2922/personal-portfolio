@@ -1,0 +1,33 @@
+name: Build and Deploy Production
+
+on:
+    pull_request:
+        types:
+            - closed
+
+jobs:
+    build-deploy-production:
+        if: github.event.pull_request.merged == true
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "14"
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build project
+              run: npm run build
+
+            - name: Deploy to server for master branch
+              env:
+                  SERVER_USER: ${{ secrets.SERVER_USER }}
+                  SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+                  SERVER_IP: ${{ secrets.SERVER_IP }}
+              run: |
+                  echo "Deploying to a live production for master branch"

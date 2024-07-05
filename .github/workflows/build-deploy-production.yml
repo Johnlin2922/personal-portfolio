@@ -1,13 +1,13 @@
 name: Build and Deploy
 
 on:
-  pull_request:
-    types:
-      - closed
+    pull_request:
+        types:
+            - closed
 
 jobs:
-  build-deploy-production:
-    if: github.event.pull_request.merged == true
+    build-deploy-production:
+        if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository

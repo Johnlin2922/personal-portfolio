@@ -75,7 +75,7 @@ const WebList = () => (
                 <img
                     src={ReactIcon}
                     alt="JS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>People</p>
             </div>
@@ -85,7 +85,7 @@ const WebList = () => (
                 <img
                     src={ReactIcon}
                     alt="TS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>Online Store</p>
             </div>
@@ -95,7 +95,7 @@ const WebList = () => (
                 <img
                     src={JSIcon}
                     alt="JS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>Restaurant Web App</p>
             </div>
@@ -105,7 +105,7 @@ const WebList = () => (
                 <img
                     src={JSIcon}
                     alt="JS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>Fourth Project</p>
             </div>
@@ -120,7 +120,7 @@ const InProgressList = () => (
                 <img
                     src={JSIcon}
                     alt="JS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>Weather Hood</p>
             </div>
@@ -130,7 +130,7 @@ const InProgressList = () => (
                 <img
                     src={ReactIcon}
                     alt="TS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>Stonks</p>
             </div>
@@ -140,7 +140,7 @@ const InProgressList = () => (
                 <img
                     src={JSIcon}
                     alt="JS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>Amazing Countries</p>
             </div>
@@ -150,7 +150,7 @@ const InProgressList = () => (
                 <img
                     src={JSIcon}
                     alt="JS Icon"
-                    className="w-7 mr-1  ml-5 text-yellow_vs"
+                    className="w-7 mr-1  ml-1 text-yellow_vs"
                 />
                 <p>Fourth Project</p>
             </div>

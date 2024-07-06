@@ -16,18 +16,20 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v2
               with:
-                  node-version: "14"
+                  node-version: "16.17.0"
 
             - name: Install dependencies
               run: npm install
 
             - name: Build project
-              run: npm run build
+              run: CI=false npm run build
 
             - name: Deploy to server for master branch
               env:
-                  SERVER_USER: ${{ secrets.SERVER_USER }}
-                  SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-                  SERVER_IP: ${{ secrets.SERVER_IP }}
+                  SERVER_USER: ${{ secrets.PRODUCTION_SERVER_USER }}
+                  SERVER_PASSWORD: ${{ secrets.PRODUCTION_SERVER_PASSWORD }}
+                  SERVER_IP: ${{ secrets.PRODUCTION_SERVER_IP }}
+                  SERVER_PATH: ${{ secrets.PRODUCTION_SERVER_PATH }}
               run: |
                   echo "Deploying to a live production for master branch"
+                  sshpass -p $SERVER_PASSWORD scp -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:$SERVER_PATH

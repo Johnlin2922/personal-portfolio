@@ -16,21 +16,21 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v2
               with:
-                  node-version: "14"
+                  node-version: "16.17.0"
 
             - name: Install dependencies
               run: npm install
 
             - name: Build project
-              run: npm run build
+              run: CI=false npm run build
 
             - name: Deploy to Preview on server
               if: github.ref != 'refs/heads/master'
               env:
-                  SERVER_USER: ${{ secrets.SERVER_USER }}
-                  SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-                  SERVER_IP: ${{ secrets.SERVER_IP }}
-                  SERVER_PREVIEW_PATH: ${{ secrets.SERVER_PREVIEW_PATH }}
+                  SERVER_USER: ${{ secrets.PREVIEW_SERVER_USER }}
+                  SERVER_PASSWORD: ${{ secrets.PREVIEW_SERVER_PASSWORD }}
+                  SERVER_IP: ${{ secrets.PREVIEW_SERVER_IP }}
+                  SERVER_PATH: ${{ secrets.PREVIEW_SERVER_PATH }}
               run: |
                   echo "Deploying to Preview site"
-                  sshpass -p $SERVER_PASSWORD scp -P 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:$SERVER_PREVIEW_PATH
+                  sshpass -p $SERVER_PASSWORD scp -P 2222 -o StrictHostKeyChecking=no -r build/* $SERVER_USER@$SERVER_IP:$SERVER_PATH

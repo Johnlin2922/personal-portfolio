@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SideBar from "../components/SideBar";
 import NavBar from "../components/NavBar";
+import Contact from "./Contact";
 
 const Home = () => {
     const [activeTab, setActiveTab] = useState("home");
@@ -21,6 +22,11 @@ const Home = () => {
                 >
                     <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
+                {activeTab === "contact" && (
+                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
+                        <Contact />
+                    </div>
+                )}
             </div>
         </div>
     );

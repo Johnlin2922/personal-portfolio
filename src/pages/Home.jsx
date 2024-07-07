@@ -22,7 +22,22 @@ const Home = () => {
                 >
                     <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
+                {activeTab === "home" && (
+                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
+                        <Contact />
+                    </div>
+                )}
                 {activeTab === "contact" && (
+                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
+                        <Contact />
+                    </div>
+                )}
+                {activeTab === "about" && (
+                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
+                        <Contact />
+                    </div>
+                )}
+                {activeTab === "resume" && (
                     <div style={{ paddingLeft: `${sideBarWidth}px` }}>
                         <Contact />
                     </div>

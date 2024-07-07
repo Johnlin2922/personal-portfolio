@@ -11,7 +11,7 @@ const Contact = () => {
                 </code>
                 <div className="table-cell border-b border-b-[#e6f1ff] border-opacity-25 w-4/5"></div>
             </div>
-            <div className="text-[#a2aabc] text-lg mt-5 mx-12 lg:mx-24 flex flex-col items-center text-justify w-4/5">
+            <div className="text-[#a2aabc] text-lg mt-5 mx-12 lg:mx-24 flex flex-col items-center w-4/5">
                 <code>
                     I'm always excited to hear about new opportunities and
                     connect with others. Whether you have a question, a project

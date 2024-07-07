@@ -6,6 +6,7 @@ import {
     ChevronRightIcon,
 } from "@heroicons/react/solid";
 import { Disclosure, Transition } from "@headlessui/react";
+import SideBar from "./SideBar";
 
 const JSIcon = require("../assets/icons/JSIcon.png");
 const TSIcon = require("../assets/icons/TSIcon.png");
@@ -80,6 +81,7 @@ const MobileMenu = () => {
                             />
                         )}{" "}
                     </Disclosure.Button>
+
                     <Transition
                         enter="transition duration-100 ease-out"
                         enterFrom="transform scale-95 opacity-0"
@@ -88,48 +90,9 @@ const MobileMenu = () => {
                         leaveFrom="transform scale-100 opacity-100"
                         leaveTo="transform scale-95 opacity-0"
                     >
-                        <Disclosure.Panel className="">
-                            <code className="px-2 pt-2 pb-3 space-y-1 text-white">
-                                <div
-                                    className="mb-2 ml-4 font-bold flex text-xl"
-                                    onClick={() =>
-                                        SetShowProjectsList(!showProjectsList)
-                                    }
-                                >
-                                    {showProjectsList ? (
-                                        <ChevronDownIcon className="w-7 mr-4" />
-                                    ) : (
-                                        <ChevronRightIcon className=" w-7 mr-4 " />
-                                    )}
-                                    Projects :
-                                </div>
-                                {showProjectsList
-                                    ? projects.map((item) => (
-                                          <Disclosure.Button
-                                              key={item.name}
-                                              as="a"
-                                              href={item.href}
-                                              className={classNames(
-                                                  item.current
-                                                      ? "bg-gray-900 text-white"
-                                                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                                  "block px-3 py-2 rounded-md text-base font-medium"
-                                              )}
-                                              aria-current={
-                                                  item.current
-                                                      ? "page"
-                                                      : undefined
-                                              }
-                                          >
-                                              <div className="flex ml-6">
-                                                  {item.icon}
-                                                  {item.name}
-                                              </div>
-                                          </Disclosure.Button>
-                                      ))
-                                    : null}
-                            </code>
-                        </Disclosure.Panel>
+                        <div className="flex">
+                            <SideBar />
+                        </div>
                     </Transition>
                 </>
             )}

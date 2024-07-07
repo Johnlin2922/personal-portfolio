@@ -17,13 +17,13 @@ const Resume = () => {
                 </div>
             </div>
             <div className="text-[#a2aabc] text-lg mt-5">
-                <div className="flex flex-row">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-0">
                     <div className="w-1/4">
                         <code className="text-yellow_vs text-2xl">
                             Education
                         </code>
                     </div>
-                    <div className="w-3/4">
+                    <div className="md:w-3/4">
                         <code className="text-blue_vs text-2xl">
                             Jacksonville State University
                         </code>
@@ -46,11 +46,11 @@ const Resume = () => {
                         </code>
                     </div>
                 </div>
-                <div className="flex flex-row pt-10">
+                <div className="flex flex-col pt-10 md:flex-row gap-4 md:gap-0">
                     <div className="w-1/4">
                         <code className="text-yellow_vs text-2xl">Work</code>
                     </div>
-                    <div className="w-3/4">
+                    <div className="md:w-3/4">
                         <code className="text-blue_vs text-2xl">
                             Leidos Dynetics
                         </code>
@@ -78,11 +78,11 @@ const Resume = () => {
                         </code>
                     </div>
                 </div>
-                <div className="flex flex-row pt-10 flex-wrap">
+                <div className="flex flex-col pt-10 flex-wrap md:flex-row">
                     <div className="w-1/4">
                         <code className="text-yellow_vs text-2xl">Skills</code>
                     </div>
-                    <div className="w-3/4">
+                    <div className="md:w-3/4">
                         <code className="text-m">
                             <br />• Nulla tristique luctus lacinia. Nullam ut
                             tortor arcu.

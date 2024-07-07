@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import SideBar from "../components/SideBar";
 import NavBar from "../components/NavBar";
 import Contact from "./Contact";
+import Header from "../components/Header";
+import About from "./About";
+import Resume from "./Resume";
 
 const Home = () => {
     const [activeTab, setActiveTab] = useState("home");
@@ -23,23 +26,38 @@ const Home = () => {
                     <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
                 {activeTab === "home" && (
-                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
+                    <div
+                        style={{ paddingLeft: `${sideBarWidth}px` }}
+                        className="w-screen"
+                    >
+                        <Header />
+                        <About />
+                        <Resume />
                         <Contact />
                     </div>
                 )}
                 {activeTab === "contact" && (
-                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
+                    <div
+                        style={{ paddingLeft: `${sideBarWidth}px` }}
+                        className="w-screen"
+                    >
                         <Contact />
                     </div>
                 )}
                 {activeTab === "about" && (
-                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
-                        <Contact />
+                    <div
+                        style={{ paddingLeft: `${sideBarWidth}px` }}
+                        className="w-screen"
+                    >
+                        <About />
                     </div>
                 )}
                 {activeTab === "resume" && (
-                    <div style={{ paddingLeft: `${sideBarWidth}px` }}>
-                        <Contact />
+                    <div
+                        style={{ paddingLeft: `${sideBarWidth}px` }}
+                        className="w-screen"
+                    >
+                        <Resume />
                     </div>
                 )}
             </div>

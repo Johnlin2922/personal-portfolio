@@ -83,7 +83,7 @@ const Resume = () => {
                         <code className="text-yellow_vs text-2xl">Skills</code>
                     </div>
                     <div className="md:w-3/4">
-                        <code className="text-m">
+                        <p className="text-m font-mono">
                             <br />• Nulla tristique luctus lacinia. Nullam ut
                             tortor arcu.
                             <br />• Aenean in mi non leo placerat suscipit a
@@ -97,7 +97,7 @@ const Resume = () => {
                             <br />• Nulla tempor nunc eu molestie volutpat. Nunc
                             a accumsan dolor.
                             <br />• Duis ut congue dui.
-                        </code>
+                        </p>
                     </div>
                 </div>
             </div>

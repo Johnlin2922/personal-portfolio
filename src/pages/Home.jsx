@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import About from "./About";
 import Resume from "./Resume";
 import { useWindowSize } from "../Utilities/Utilities";
+import MobileMenu from "../components/MobileMenu";
 
 const Home = () => {
     const [activeTab, setActiveTab] = useState("home");
@@ -21,6 +22,14 @@ const Home = () => {
         }
     };
 
+    const getPaddingLeftValue = () => {
+        if (windowSize.width >= 1024) {
+            return sideBarWidth;
+        } else {
+            return 0;
+        }
+    };
+
     return (
         <div className="App flex h-full">
             <div
@@ -31,7 +40,9 @@ const Home = () => {
             </div>
             <div className="bg-[#1e1e1e] h-full">
                 <div className="lg:hidden">
-                    <div>insert mobile menu here</div>
+                    <div>
+                        <MobileMenu />
+                    </div>
                 </div>
                 <div
                     className="bg-[#424042] h-16 hidden lg:block"
@@ -40,7 +51,10 @@ const Home = () => {
                     <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
                 {activeTab === "home" && (
-                    <div className={`w-screen ${getPaddingLeftClass()}`}>
+                    <div
+                        style={{ paddingLeft: `${getPaddingLeftValue()}px` }}
+                        className="w-screen"
+                    >
                         <Header />
                         <About />
                         <Resume />

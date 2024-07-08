@@ -26,7 +26,7 @@ const About = () => {
     return (
         <div
             id="About"
-            className="flex mx-12 mt-24 lg:mx-24 items-center justify-center lg:w-4/5 text-justify mb-96"
+            className="flex mx-12 mt-24 lg:mx-24 items-center justify-center lg:w-4/5 mb-96"
         >
             <div>
                 <div className="table">

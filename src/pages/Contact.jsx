@@ -19,10 +19,13 @@ const Contact = () => {
                     Click the button below to contact me, and I'll do my best to
                     respond promptly. Looking forward to hearing from you!
                 </code>
-                <button className=" border border-lightblue_vs text-lightblue_vs mt-10 p-3 rounded hover:bg-opacity-10 hover:bg-lightblue_vs w-1/2">
-                    <a href="mailto:youssefkizou@gmail.com">
-                        <code>Contact</code>
-                    </a>
+                <button
+                    onClick={() => {
+                        window.location.href = "mailto:Johnlin2922@gmail.com";
+                    }}
+                    className=" border border-lightblue_vs text-lightblue_vs mt-10 p-3 rounded hover:bg-opacity-10 hover:bg-lightblue_vs w-1/2"
+                >
+                    <code>Contact</code>
                 </button>
             </div>
         </div>

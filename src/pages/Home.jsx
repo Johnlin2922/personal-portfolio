@@ -14,14 +14,6 @@ const Home = () => {
 
     const windowSize = useWindowSize();
 
-    const getPaddingLeftClass = () => {
-        if (windowSize.width >= 1024) {
-            return `pl-[${sideBarWidth}px]`;
-        } else {
-            return "pl-[0px]";
-        }
-    };
-
     const getPaddingLeftValue = () => {
         if (windowSize.width >= 1024) {
             return sideBarWidth;

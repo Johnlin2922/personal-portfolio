@@ -10,6 +10,11 @@ const FirebaseLogo = require("../assets/logos/FirebaseLogo.png");
 const NodeJSLogo = require("../assets/logos/NodeJSLogo.png");
 const DockerLogo = require("../assets/logos/DockerLogo.png");
 const CSharpLogo = require("../assets/logos/CSharpLogo.png");
+const UnityLogo = require("../assets/logos/UnityLogo.png");
+const JavaLogo = require("../assets/logos/JavaLogo.png");
+const AndroidLogo = require("../assets/logos/AndroidLogo.png");
+const WireSharkLogo = require("../assets/logos/WireSharkLogo.png");
+const VisualStudioLogo = require("../assets/logos/VisualStudioLogo.png");
 
 const skills = [
     { name: "JavaScript (ES6+)", logo: JsLogo },
@@ -20,6 +25,11 @@ const skills = [
     { name: "Nodejs", logo: NodeJSLogo },
     { name: "Docker", logo: DockerLogo },
     { name: "CSharp", logo: CSharpLogo },
+    { name: "VisualStudio", logo: VisualStudioLogo },
+    { name: "Java", logo: JavaLogo },
+    { name: "Android", logo: AndroidLogo },
+    { name: "WireShark", logo: WireSharkLogo },
+    { name: "Unity", logo: UnityLogo },
 ];
 
 const About = () => {

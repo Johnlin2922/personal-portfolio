@@ -134,7 +134,7 @@ const SideBar = () => {
 
 const WebList = () => (
     <div className="flex flex-col">
-        <a href="/">
+        <a href="https://github.com/Johnlin2922/people">
             <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
                 <img
                     src={ReactIcon}
